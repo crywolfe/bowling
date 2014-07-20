@@ -1,0 +1,58 @@
+<h1>Games#new</h1>
+<h2>Create a new Game Scorecard</h2>
+
+<div class="col-sm-10">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Throw</th>
+        <th>Frame 1</th>
+        <th>Frame 2</th>
+        <th>Frame 3</th>
+        <th>Frame 4</th>
+        <th>Frame 5</th>
+        <th>Frame 6</th>
+        <th>Frame 7</th>
+        <th>Frame 8</th>
+        <th>Frame 9</th>
+        <th>Frame 10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1st
+          2nd
+        </td>
+        <%= form_for (@game) do |f| %>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:scorecard, size: "1") %>
+          <%= f.text_field(:scorecard, size: "1") %>      </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+<%= f.label(:comment) %>
+<%= f.text_field(:comment) %>
+
+<%= f.submit %>
+<% end %>
+</div>

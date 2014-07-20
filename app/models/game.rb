@@ -18,6 +18,9 @@ class Game < ActiveRecord::Base
   # Set up game methods
 
   def build_game
+
+    # 10.times do |frame_no|
+      
   end
 
   def start_game

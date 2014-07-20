@@ -1,4 +1,47 @@
 <h1>Games#index</h1>
 
 <h2>Games Dashboard</h2>
-<%= current_user %>
+
+<div class="col-md-12">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Frame 1</th>
+        <th>Frame 2</th>
+        <th>Frame 3</th>
+        <th>Frame 4</th>
+        <th>Frame 5</th>
+        <th>Frame 6</th>
+        <th>Frame 7</th>
+        <th>Frame 8</th>
+        <th>Frame 9</th>
+        <th>Frame 10</th>
+        <th>Final</th>
+        <th>Comments</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= @user.email %>
+<%= @game %>

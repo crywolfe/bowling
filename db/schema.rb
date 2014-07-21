@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140720052157) do
+ActiveRecord::Schema.define(version: 20140720200441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,26 @@ ActiveRecord::Schema.define(version: 20140720052157) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "frame_1a"
+    t.string   "frame_1b"
+    t.string   "frame_2a"
+    t.string   "frame_2b"
+    t.string   "frame_3a"
+    t.string   "frame_3b"
+    t.string   "frame_4a"
+    t.string   "frame_4b"
+    t.string   "frame_5a"
+    t.string   "frame_5b"
+    t.string   "frame_6a"
+    t.string   "frame_6b"
+    t.string   "frame_7a"
+    t.string   "frame_7b"
+    t.string   "frame_8a"
+    t.string   "frame_8b"
+    t.string   "frame_9a"
+    t.string   "frame_9b"
+    t.string   "frame_10a"
+    t.string   "frame_10b"
   end
 
   create_table "users", force: true do |t|

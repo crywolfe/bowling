@@ -24,32 +24,34 @@
           1st
           2nd
         </td>
+
         <%= form_for (@game) do |f| %>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
-          <td><%= f.text_field(:scorecard, size: "1") %>
-          <%= f.text_field(:scorecard, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_1a, size: "1") %>
+          <%= f.text_field(:frame_1b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_2a, size: "1") %>
+          <%= f.text_field(:frame_2b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_3a, size: "1") %>
+          <%= f.text_field(:frame_3b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_4a, size: "1") %>
+          <%= f.text_field(:frame_4b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_5a, size: "1") %>
+          <%= f.text_field(:frame_5b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_6a, size: "1") %>
+          <%= f.text_field(:frame_6b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_7a, size: "1") %>
+          <%= f.text_field(:frame_7b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_8a, size: "1") %>
+          <%= f.text_field(:frame_8b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_9a, size: "1") %>
+          <%= f.text_field(:frame_9b, size: "1") %>      </td>
+          <td><%= f.text_field(:frame_10a, size: "1") %>
+          <%= f.text_field(:frame_10b, size: "1") %>      </td>
 
       </tr>
 
     </tbody>
   </table>
+  <%= f.hidden_field(:user_id) %>
 <%= f.label(:comment) %>
 <%= f.text_field(:comment) %>
 

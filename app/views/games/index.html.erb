@@ -1,11 +1,12 @@
-<h1>Games#index</h1>
-
-<h2>Games Dashboard</h2>
+<h2>Games Dashboard for <%= @user.email %>
+</h2>
 
 <div class="col-md-12">
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Game No.</th>
+        <th>throws</th>
         <th>Frame 1</th>
         <th>Frame 2</th>
         <th>Frame 3</th>
@@ -18,30 +19,44 @@
         <th>Frame 10</th>
         <th>Final</th>
         <th>Comments</th>
-
       </tr>
     </thead>
+
     <tbody>
+      <% @user.games.each do |game| %>
       <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+          <td>
+            <%= game.id %>
+          </td>
+          <td>
+            1st
+            2nd
+          </td>
+          <td><%= game.frame_1a %><br/>
+            <%= game.frame_1b %></td>
+          <td><%= game.frame_2a %><br/>
+            <%= game.frame_2b %></td>
+          <td><%= game.frame_3a %><br/>
+            <%= game.frame_3b %></td>
+          <td><%= game.frame_4a %><br/>
+            <%= game.frame_4b %></td>
+          <td><%= game.frame_5a %><br/>
+            <%= game.frame_5b %></td>
+          <td><%= game.frame_6a %><br/>
+            <%= game.frame_6b %></td>
+          <td><%= game.frame_7a %><br/>
+            <%= game.frame_7b %></td>
+          <td><%= game.frame_8a %><br/>
+            <%= game.frame_8b %></td>
+          <td><%= game.frame_9a %><br/>
+            <%= game.frame_9b %></td>
+          <td><%= game.frame_10a %><br/>
+            <%= game.frame_10b %></td>
+          <td><%= game %></td>
+          <td><%= game.comment %><br/>
+          </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
-<%= @user.email %>
-<%= @game %>

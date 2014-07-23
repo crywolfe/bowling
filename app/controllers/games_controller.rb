@@ -17,7 +17,7 @@ class GamesController < ApplicationController
     @game[:user_id] = @user.id
 
     populate_scorecard
-
+    binding.pry
     if @game.save
       redirect_to games_path
     else
@@ -30,9 +30,11 @@ class GamesController < ApplicationController
 
   def populate_scorecard
     @game.scorecard = []
-    10.times do |num|
-      @game.scorecard << [params["frame_#{num+1}a"].to_i, params["frame_#{num+1}b"].to_i]
+    9.times do |num|
+      @game.scorecard << [params["frame_#{num+1}a"].to_i, params["frame_#{num+1}b"].to_i, 0]
     end
+    @game.scorecard << [params[:frame_10a].to_i, params[:frame_10b].to_i, params[:frame_10c].to_i]
+
   end
 
 

@@ -2,14 +2,14 @@
 #
 # Table name: frames
 #
-#  id                :integer          not null, primary key
-#  game_id           :integer
-#  frame_number      :integer
-#  chance_one_points :integer
-#  chance_two_points :integer
-#  total_points      :integer
-#  created_at        :datetime
-#  updated_at        :datetime
+#  id           :integer          not null, primary key
+#  game_id      :integer
+#  frame_number :integer
+#  ball1        :integer
+#  ball2        :integer
+#  total_points :integer
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 describe Frame do

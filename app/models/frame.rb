@@ -2,44 +2,60 @@
 #
 # Table name: frames
 #
-#  id                :integer          not null, primary key
-#  game_id           :integer
-#  frame_number      :integer
-#  chance_one_points :integer
-#  chance_two_points :integer
-#  total_points      :integer
-#  created_at        :datetime
-#  updated_at        :datetime
+#  id           :integer          not null, primary key
+#  game_id      :integer
+#  frame_number :integer
+#  ball1        :integer
+#  ball2        :integer
+#  total_points :integer
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 class Frame < ActiveRecord::Base
   belongs_to :game
 
-  # ??? Should I set up a comments class that belongs to each frame or simply have comments be an attribute of game... multiple comments may make it more appropriate for its own model and table. TBD  ???
+  attr_accessor :frame_number, :ball1, :ball2
+
+  PINS = 10
+  FRAMES = 10
 
   # Set up frame methods
+  def alt_initialize(frame_number, ball1 = 0, ball2 = 0)
 
-  def build_frame
+    self.frame_number = frame_number.to_i
+    self.ball1 = ball1.to_i
+    self.ball2 = ball2.to_i
   end
 
-  def start_frame
+  # def frame_number
+  #   @frame_number
+  # end
+  #
+  # def strike?
+  #   @ball1 == PINS
+  # end
+  #
+  # def spare?
+  #   @ball1 + @ball2 == PINS
+  # end
+
+  def complete_frame
+    @game.scorecard[0].ball1 = params[:frame_1a]
+    @game.scorecard[0].ball2 = params[:frame_1b]
+  end
+
+  def basic_score
+    @total_points = @ball1 + @ball2
 
   end
 
-  def finish_frame
-
-  end
-
-  def score_frame
-
-  end
-
-  def score_chance_one
-  end
-
-  def score_chance_two
-  end
-
-
+  # def strike_score
+  #   next_frame = @frame_number + 1
+  #   if strike?
+  #
+  #     total = @ball1 + NEXT TWO THROWS
+  #   end
+  # end
 
 end

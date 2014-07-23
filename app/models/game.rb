@@ -2,12 +2,24 @@
 #
 # Table name: games
 #
-#  id         :integer          not null, primary key
-#  scorecard  :string(255)      is an Array
-#  comment    :string(255)
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id             :integer          not null, primary key
+#  comment        :string(255)
+#  user_id        :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  frame_10c      :string(255)
+#  frame_1_score  :string(255)
+#  frame_2_score  :string(255)
+#  frame_3_score  :string(255)
+#  frame_4_score  :string(255)
+#  frame_5_score  :string(255)
+#  frame_6_score  :string(255)
+#  frame_7_score  :string(255)
+#  frame_8_score  :string(255)
+#  frame_9_score  :string(255)
+#  frame_10_score :string(255)
+#  scorecard      :integer          is an Array
+#  frame_number   :integer
 #
 
 class Game < ActiveRecord::Base
@@ -15,27 +27,65 @@ class Game < ActiveRecord::Base
   belongs_to :user
   has_many :frames
 
-  # Set up game methods
+  PINS = 10
 
-  def build_game
+  # def alt_initialize
+  #
+  #   self.scorecard = [Frame.new({:frame_number => "1"}),
+  #             Frame.new({:frame_number => "2"}),
+  #             Frame.new({:frame_number => "3"}),
+  #             Frame.new({:frame_number => "4"}),
+  #             Frame.new({:frame_number => "5"}),
+  #             Frame.new({:frame_number => "6"}),
+  #             Frame.new({:frame_number => "7"}),
+  #             Frame.new({:frame_number => "8"}),
+  #             Frame.new({:frame_number => "9"}),
+  #             Frame.new({:frame_number => "10"})]
+  # end
 
-    # 10.times do |frame_no|
-      
+  def frame_score(frame_number)
+    if frame_number < 10
+      frame_1_9(frame_number)
+    elsif frame_number == 10
+      frame_10(frame_number)
+    end
   end
 
-  def start_game
+  def frame_1_9(frame_number)
 
+    # Frames 1 through 9
+    if frame_number < 10 && strike(frame_number)
+      frame_score = scorecard[frame_number-1][0] + scorecard[frame_number-1][1] + scorecard[frame_number][0] + scorecard[frame_number][1]
+    elsif frame_number < 10 && spare(frame_number)
+      frame_score = scorecard[frame_number-1][0] + scorecard[frame_number-1][1] + scorecard[frame_number][0]
+    else
+      frame_score = scorecard[frame_number-1][0] + scorecard[frame_number-1][1]
+    end
+    frame_score
   end
 
-  def finish_game
-
+    # the 10th frame
+  def frame_10(frame_number)
+    if frame_number == 10 && (strike(frame_number) || spare(frame_number))
+      frame_score = scorecard[frame_number-1][0] + scorecard[frame_number-1][1] + scorecard[frame_number-1][2]
+    else
+      frame_score = scorecard[frame_number-1][0] + scorecard[frame_number-1][1] + scorecard[frame_number-1][0]
+    end
+    frame_score
   end
 
-  def current_frame
-
+  def strike(frame_number)
+    scorecard[frame_number-1][0] == PINS
   end
 
-  def score_game
+  def spare(frame_number)
+    scorecard[frame_number-1][0] + scorecard[frame_number-1][1] == PINS
+  end
+
+
+  def total_score
+
+
   end
 
 

@@ -31,30 +31,51 @@
           <td>
             1st
             2nd
+            total
           </td>
-          <td><%= game.frame_1a %><br/>
-            <%= game.frame_1b %></td>
-          <td><%= game.frame_2a %><br/>
-            <%= game.frame_2b %></td>
-          <td><%= game.frame_3a %><br/>
-            <%= game.frame_3b %></td>
-          <td><%= game.frame_4a %><br/>
-            <%= game.frame_4b %></td>
-          <td><%= game.frame_5a %><br/>
-            <%= game.frame_5b %></td>
-          <td><%= game.frame_6a %><br/>
-            <%= game.frame_6b %></td>
-          <td><%= game.frame_7a %><br/>
-            <%= game.frame_7b %></td>
-          <td><%= game.frame_8a %><br/>
-            <%= game.frame_8b %></td>
-          <td><%= game.frame_9a %><br/>
-            <%= game.frame_9b %></td>
-          <td><%= game.frame_10a %><br/>
-            <%= game.frame_10b %></td>
-          <td><%= game %></td>
-          <td><%= game.comment %><br/>
-          </td>
+          <td><%= game.scorecard[0][0] %><br/>
+            <%= game.scorecard[0][1] %><br/>
+            <%= game.frame_score(1) %><br/>
+            </td>
+          <td><%= game.scorecard[1][0] %><br/>
+            <%= game.scorecard[1][1] %><br/>
+            <%= game.frame_score(2) %><br/>
+            </td>
+          <td><%= game.scorecard[2][0] %><br/>
+            <%= game.scorecard[2][1] %><br/>
+            <%= game.frame_score(3) %><br/>
+            </td>
+          <td><%= game.scorecard[3][0] %><br/>
+            <%= game.scorecard[3][1] %><br/>
+            <%= game.frame_score(4) %><br/>
+            </td>
+          <td><%= game.scorecard[4][0] %><br/>
+            <%= game.scorecard[4][1] %><br/>
+            <%= game.frame_score(5) %><br/>
+            </td>
+          <td><%= game.scorecard[5][0] %><br/>
+            <%= game.scorecard[5][1] %><br/>
+            <%= game.frame_score(6) %><br/>
+            </td>
+          <td><%= game.scorecard[6][0] %><br/>
+            <%= game.scorecard[6][1] %><br/>
+            <%= game.frame_score(7) %><br/>
+            </td>
+          <td><%= game.scorecard[7][0] %><br/>
+            <%= game.scorecard[7][1] %><br/>
+            <%= game.frame_score(8) %><br/>
+            </td>
+          <td><%= game.scorecard[8][0] %><br/>
+            <%= game.scorecard[8][1] %><br/>
+            <%= game.frame_score(9) %><br/>
+            </td>
+          <td><%= game.scorecard[9][0] %><br/>
+            <%= game.scorecard[9][1] %><br/>
+            <%= game.scorecard[9][2] %><br/>
+            <% binding.pry %>
+            <%= game.frame_score(10) %><br/>
+            </td>
+
       </tr>
       <% end %>
     </tbody>

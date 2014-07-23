@@ -12,7 +12,11 @@ class GamesController < ApplicationController
 
   def create
     @user = current_user
-    @game = Game.new(game_params)
+
+    @game = Game.new
+    @game[:user_id] = @user.id
+
+    populate_scorecard
 
     if @game.save
       redirect_to games_path
@@ -24,22 +28,13 @@ class GamesController < ApplicationController
 
   private
 
-  def game_params
-    params[:game][:user_id] = @user.id
-    params.require(:game).permit(
-    :frame_1a, :frame_1b,
-    :frame_2a, :frame_2b,
-    :frame_3a, :frame_3b,
-    :frame_4a, :frame_4b,
-    :frame_5a, :frame_5b,
-    :frame_6a, :frame_6b,
-    :frame_7a, :frame_7b,
-    :frame_8a, :frame_8b,
-    :frame_9a, :frame_9b,
-    :frame_10a, :frame_10b,
-    :comment, :user_id)
-
+  def populate_scorecard
+    @game.scorecard = []
+    10.times do |num|
+      @game.scorecard << [params["frame_#{num+1}a"].to_i, params["frame_#{num+1}b"].to_i]
+    end
   end
+
 
 
 

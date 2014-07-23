@@ -19,6 +19,11 @@ describe User do
   it "should be able to add one or more comments to a game" do
     pending
   end
+
+  it { should have_many :games }
+
+  it { should validate_presence_of :email }
+  
 end
 
 describe "the signin process", :type => :feature do

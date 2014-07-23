@@ -25,36 +25,37 @@
           2nd
         </td>
 
-        <%= form_for (@game) do |f| %>
-          <td><%= f.text_field(:frame_1a, size: "1") %>
-          <%= f.text_field(:frame_1b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_2a, size: "1") %>
-          <%= f.text_field(:frame_2b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_3a, size: "1") %>
-          <%= f.text_field(:frame_3b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_4a, size: "1") %>
-          <%= f.text_field(:frame_4b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_5a, size: "1") %>
-          <%= f.text_field(:frame_5b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_6a, size: "1") %>
-          <%= f.text_field(:frame_6b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_7a, size: "1") %>
-          <%= f.text_field(:frame_7b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_8a, size: "1") %>
-          <%= f.text_field(:frame_8b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_9a, size: "1") %>
-          <%= f.text_field(:frame_9b, size: "1") %>      </td>
-          <td><%= f.text_field(:frame_10a, size: "1") %>
-          <%= f.text_field(:frame_10b, size: "1") %>      </td>
+        <%= form_tag(games_path, method: "POST") %>
+          <td><%= text_field_tag(:frame_1a, nil, class: "input-mini") %>
+            <%= text_field_tag(:frame_1b, nil, class: "input-mini") %>   </td>
+
+          <td><%= text_field_tag(:frame_2a) %>
+          <%= text_field_tag(:frame_2b) %>      </td>
+          <td><%= text_field_tag(:frame_3a) %>
+          <%= text_field_tag(:frame_3b) %>      </td>
+          <td><%= text_field_tag(:frame_4a) %>
+          <%= text_field_tag(:frame_4b) %>      </td>
+          <td><%= text_field_tag(:frame_5a) %>
+          <%= text_field_tag(:frame_5b) %>      </td>
+          <td><%= text_field_tag(:frame_6a) %>
+          <%= text_field_tag(:frame_6b) %>      </td>
+          <td><%= text_field_tag(:frame_7a) %>
+          <%= text_field_tag(:frame_7b) %>      </td>
+          <td><%= text_field_tag(:frame_8a) %>
+          <%= text_field_tag(:frame_8b) %>      </td>
+          <td><%= text_field_tag(:frame_9a) %>
+          <%= text_field_tag(:frame_9b) %>      </td>
+          <td><%= text_field_tag(:frame_10a) %>
+          <%= text_field_tag(:frame_10b) %>
+          <%= text_field_tag(:frame_10c) %>      </td>
 
       </tr>
 
     </tbody>
   </table>
-  <%= f.hidden_field(:user_id) %>
-<%= f.label(:comment) %>
-<%= f.text_field(:comment) %>
+  <%= hidden_field_tag(:user_id) %>
+<%= label_tag(:comment) %>
+<%= text_field_tag(:comment) %>
 
-<%= f.submit %>
-<% end %>
+<%= submit_tag "Create Score Card" %>
 </div>
